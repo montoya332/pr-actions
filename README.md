@@ -1,4 +1,4 @@
-# App
+# Apps
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
