@@ -14430,7 +14430,6 @@ const github = __nccwpck_require__(5438);
 async function run() {
   const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
   const message = core.getInput('message') || 'Thank you!';
-  const searchTerm = core.getInput('searchTerm') || 'thank you';
 
   if ( typeof GITHUB_TOKEN !== 'string' ) {
     throw new Error('Invalid GITHUB_TOKEN: did you forget to set it in your action config?');
@@ -14446,12 +14445,13 @@ async function run() {
   console.log(`Found pull request: ${pull_request.number}`);
 
   const octokit = github.getOctokit(GITHUB_TOKEN)
+    await octokit.rest.issues.createComment({
+      ...context.repo,
+      issue_number: pull_request.number,
+      body: `${message}`
+    });
 
-  await octokit.issues.createComment({
-    ...context.repo,
-    issue_number: pull_request.number,
-    body: `${message}`
-  });
+
 }
 
 run().catch(e => core.setFailed(e.message));

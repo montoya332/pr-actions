@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ncc build src/github_actions/action.* -o dist",
+    "build": "ncc build src/action.js -o dist",
     "test": "echo 'Hello word'"
 
   },

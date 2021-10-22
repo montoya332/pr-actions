@@ -2,6 +2,10 @@ name: Run Tests
 on:
   discussion_comment:
     types: [created]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   test:
     runs-on: ubuntu-latest
