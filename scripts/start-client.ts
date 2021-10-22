@@ -60,8 +60,9 @@ const start = async () => {
             console.log(
                 `[${new Date().toISOString()}]`,
                 chalk.blue(
-                    `App is running: ${process.env.HOST || 'http://localhost'}:${process.env.PORT ||
-                        8500}`
+                    `App is running: ${process.env.HOST || 'http://localhost'}:${
+                        process.env.PORT || 8500
+                    }`
                 )
             );
         });
