@@ -21,12 +21,13 @@ async function run() {
   console.log(`Found pull request: ${pull_request.number}`);
 
   const octokit = github.getOctokit(GITHUB_TOKEN)
+    await octokit.rest.issues.createComment({
+      ...context.repo,
+      issue_number: pull_request.number,
+      body: `${message}`
+    });
 
-  await octokit.issues.createComment({
-    ...context.repo,
-    issue_number: pull_request.number,
-    body: `${message}`
-  });
+
 }
 
 run().catch(e => core.setFailed(e.message));
