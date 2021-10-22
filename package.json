@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ncc build src/action.js -o dist"
+    "build": "ncc build src/github_actions/action.* -o dist",
+    "test": "echo 'Hello word'"
+
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,10 @@
   "homepage": "https://github.corp.ebay.com/armontoya/pr-actions#readme",
   "dependencies": {},
   "devDependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "@vercel/ncc": "^0.27.0",
-    "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1"
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.31.1",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0"
   }
 }

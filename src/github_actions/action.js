@@ -6,7 +6,6 @@ const github = require('@actions/github');
 async function run() {
   const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
   const message = core.getInput('message') || 'Thank you!';
-  const searchTerm = core.getInput('searchTerm') || 'thank you';
 
   if ( typeof GITHUB_TOKEN !== 'string' ) {
     throw new Error('Invalid GITHUB_TOKEN: did you forget to set it in your action config?');
